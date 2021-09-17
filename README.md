@@ -1,7 +1,7 @@
-# Gulp Run 
+# Run Watcher
 gulp
 
-# Run build (Add dist)
+# Run build, compile files in 'dist'
 gulp build
 
 # Clean Dist 
