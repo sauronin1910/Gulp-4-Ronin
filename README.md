@@ -1,3 +1,3 @@
-# Gulp-Starter
-gulp
+# Run Build 
+gulp build
 
