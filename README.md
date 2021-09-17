@@ -1,7 +1,7 @@
 # Gulp Run 
 gulp
 
-# Run build 
+# Run build (Add dist)
 gulp build
 
 # Clean Dist 
