@@ -1,3 +1,6 @@
+#Install Gulp-pack
+gulp i
+
 # Run Watcher
 gulp
 
