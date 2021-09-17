@@ -1,3 +1,3 @@
-# Gulp-Starter
+# Run gulp 
 gulp
 
