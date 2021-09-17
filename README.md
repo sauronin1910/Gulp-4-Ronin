@@ -1,5 +1,5 @@
 # Install Taks Runner Gulp
-gulp i
+npm i
 
 # Run Watcher
 gulp
