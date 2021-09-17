@@ -1,4 +1,4 @@
-# Install Gulp-pack
+# Install Taks Runner Gulp
 gulp i
 
 # Run Watcher
