@@ -1,4 +1,4 @@
-# Install Taks Runner Gulp
+# Install Task Runner Gulp
 npm i
 
 # Run Watcher
