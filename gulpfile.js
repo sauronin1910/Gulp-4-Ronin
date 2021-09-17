@@ -6,7 +6,7 @@ const browserSync    = require('browser-sync').create(),
       sass           = require('gulp-sass')(require('sass')),
 		autoprefixer   = require('gulp-autoprefixer'),
 		imagemin		 	= require('gulp-imagemin'),
-		newer 			= require('gulp-newer');
+		newer 			= require('gulp-newer'),
       del            = require('del');
 
 
