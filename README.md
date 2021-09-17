@@ -8,5 +8,5 @@ gulp
 gulp build
 
 # Clean Dist 
-gulp clean Build
+gulp cleanBuild
 
