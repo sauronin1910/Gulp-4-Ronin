@@ -1,10 +1,10 @@
 const {src, dest, parallel, series, watch} = require('gulp');
 
 const browserSync  = require('browser-sync').create(),
-      concat       = require('gulp-concat'),
-      uglify       = require('gulp-uglify-es').default,
       sass         = require('gulp-sass')(require('sass')),
+      concat       = require('gulp-concat'),
       autoprefixer = require('gulp-autoprefixer'),
+      uglify       = require('gulp-uglify-es').default,
       imagemin     = require('gulp-imagemin'),
       changed      = require('gulp-changed'),
       del          = require('del');
@@ -64,6 +64,7 @@ const buildDist = () => {
    ], {base: 'app'})
    .pipe(dest('dist'))
 };
+
 const cleanBuild =() => {
    return del('dist/**/*', { force: true }) 
 };
@@ -79,7 +80,7 @@ exports.server     = server;
 exports.scripts    = scripts;
 exports.styles     = styles;
 exports.images     = images;
-exports.buildDist = buildDist;
+exports.buildDist  = buildDist;
 exports.cleanImg   = cleanImg;
 exports.cleanBuild = cleanBuild;
 exports.build      = series(cleanBuild, styles, scripts, images, buildDist);
