@@ -56,7 +56,7 @@ const cleanImg = () => {
   return del("app/img/dest/**/*", { force: true });
 };
 
-const buildDist = () => {
+const distBuild = () => {
   return src(
     [
       "app/css/**/*.min.css",
@@ -83,8 +83,8 @@ exports.server = server;
 exports.scripts = scripts;
 exports.styles = styles;
 exports.images = images;
-exports.buildDist = buildDist;
+exports.distBuild = distBuild;
 exports.cleanImg = cleanImg;
 exports.cleanBuild = cleanBuild;
-exports.build = series(cleanBuild, styles, scripts, images, buildDist);
+exports.build = series(cleanBuild, styles, scripts, images, distBuild);
 exports.default = parallel(server, styles, scripts, watcher);
