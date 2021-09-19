@@ -1,4 +1,4 @@
-# Install Gulp Pack
+# Install Gulp-Pack
 npm i
 # Run Watcher
 gulp
