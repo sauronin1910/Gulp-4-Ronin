@@ -18,7 +18,7 @@ const server = () => {
 };
 
 const styles = () => {
-  return src("app/scss/style.scss")
+  return src("app/scss/**/*.scss")
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(concat("style.min.css"))
     .pipe(
@@ -73,7 +73,7 @@ const cleanBuild = () => {
 };
 
 const watcher = () => {
-  watch(["app/**/*.js", "!app/**/*.min.js"], scripts);
+  watch(["app/scss/**/*.js", "!app/**/*.min.js"], scripts);
   watch("app/**/*.scss", styles);
   watch("app/**/*.html").on("change", browserSync.reload);
   watch("app/img/src/**/*", images);
