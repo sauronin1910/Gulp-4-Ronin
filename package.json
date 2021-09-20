@@ -16,6 +16,7 @@
     "gulp-changed": "^4.0.3",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-image": "^6.2.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.0.0",

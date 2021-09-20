@@ -7,6 +7,7 @@ const browserSync   = require("browser-sync").create(),
       autoprefixer  = require("gulp-autoprefixer"),
       uglify        = require("gulp-uglify-es").default,
       imagemin      = require("gulp-imagemin"),
+      image         = require('gulp-image'),
       changed       = require("gulp-changed"),
       del           = require("del");
 
@@ -39,7 +40,7 @@ const scripts = () => {
     .pipe(browserSync.stream());
 };
 
-const images = () => {
+const img = () => {
   return src("app/img/src/**/*")
     .pipe(changed("app/img/dest"))
     .pipe(
@@ -52,6 +53,9 @@ const images = () => {
         }),
       ])
     )
+    .pipe(image({
+      svgo: false
+    }))
     .pipe(dest("app/img/dest"));
 };
 
@@ -79,15 +83,15 @@ const watcher = () => {
   watch(["app/js/**/*.js", "!app/**/*.min.js"], scripts);
   watch("app/**/*.scss", styles);
   watch("app/**/*.html").on("change", browserSync.reload);
-  watch("app/img/src/**/*", images);
+  watch("app/img/src/**/*", img);
 };
 
 exports.server      = server;
 exports.scripts     = scripts;
 exports.styles      = styles;
-exports.images      = images;
+exports.img         = img;
 exports.distBuild   = distBuild;
 exports.cleanImg    = cleanImg;
 exports.cleanBuild  = cleanBuild;
-exports.build       = series(cleanBuild, styles, scripts, images, distBuild);
+exports.build       = series(cleanBuild, styles, scripts, img, distBuild);
 exports.default     = parallel(server, styles, scripts, watcher);
