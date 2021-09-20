@@ -1,13 +1,14 @@
 const { src, dest, parallel, series, watch } = require("gulp");
 
-const browserSync = require("browser-sync").create(),
-  sass = require("gulp-sass")(require("sass")),
-  concat = require("gulp-concat"),
-  autoprefixer = require("gulp-autoprefixer"),
-  uglify = require("gulp-uglify-es").default,
-  imagemin = require("gulp-imagemin"),
-  changed = require("gulp-changed"),
-  del = require("del");
+const browserSync   = require("browser-sync").create(),
+      plumber       = require("gulp-plumber"),
+      sass          = require("gulp-sass")(require("sass")),
+      concat        = require("gulp-concat"),
+      autoprefixer  = require("gulp-autoprefixer"),
+      uglify        = require("gulp-uglify-es").default,
+      imagemin      = require("gulp-imagemin"),
+      changed       = require("gulp-changed"),
+      del           = require("del");
 
 const server = () => {
   browserSync.init({
@@ -19,6 +20,7 @@ const server = () => {
 
 const styles = () => {
   return src("app/scss/**/*.scss")
+    .pipe(plumber())
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(concat("style.min.css"))
     .pipe(
@@ -30,6 +32,7 @@ const styles = () => {
 
 const scripts = () => {
   return src("app/js/src/*.js")
+    .pipe(plumber())
     .pipe(concat("script.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js/dest"))
@@ -79,12 +82,12 @@ const watcher = () => {
   watch("app/img/src/**/*", images);
 };
 
-exports.server = server;
-exports.scripts = scripts;
-exports.styles = styles;
-exports.images = images;
-exports.distBuild = distBuild;
-exports.cleanImg = cleanImg;
-exports.cleanBuild = cleanBuild;
-exports.build = series(cleanBuild, styles, scripts, images, distBuild);
-exports.default = parallel(server, styles, scripts, watcher);
+exports.server      = server;
+exports.scripts     = scripts;
+exports.styles      = styles;
+exports.images      = images;
+exports.distBuild   = distBuild;
+exports.cleanImg    = cleanImg;
+exports.cleanBuild  = cleanBuild;
+exports.build       = series(cleanBuild, styles, scripts, images, distBuild);
+exports.default     = parallel(server, styles, scripts, watcher);
