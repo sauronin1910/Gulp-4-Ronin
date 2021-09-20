@@ -29,7 +29,7 @@ const styles = () => {
 };
 
 const scripts = () => {
-  return src("app/js/src/script.js")
+  return src("app/js/src/*.js")
     .pipe(concat("script.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js/dest"))
@@ -73,7 +73,7 @@ const cleanBuild = () => {
 };
 
 const watcher = () => {
-  watch(["app/scss/**/*.js", "!app/**/*.min.js"], scripts);
+  watch(["app/js/**/*.js", "!app/**/*.min.js"], scripts);
   watch("app/**/*.scss", styles);
   watch("app/**/*.html").on("change", browserSync.reload);
   watch("app/img/src/**/*", images);
