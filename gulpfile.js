@@ -6,6 +6,7 @@ const browserSync   = require("browser-sync").create(),
       concat        = require("gulp-concat"),
       autoprefixer  = require("gulp-autoprefixer"),
       uglify        = require("gulp-uglify-es").default,
+      sourcemaps    = require('gulp-sourcemaps'),
       imagemin      = require("gulp-imagemin"),
       image         = require('gulp-image'),
       changed       = require("gulp-changed"),
@@ -22,6 +23,7 @@ const server = () => {
 const styles = () => {
   return src("app/scss/**/*.scss")
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(concat("style.min.css"))
     .pipe(
@@ -34,6 +36,7 @@ const styles = () => {
 const scripts = () => {
   return src("app/js/src/*.js")
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(concat("script.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js/dest"))
