@@ -29,6 +29,7 @@ const styles = () => {
     .pipe(
       autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true })
     )
+    .pipe(sourcemaps.write('../css'))
     .pipe(dest("app/css"))
     .pipe(browserSync.stream());
 };
@@ -39,6 +40,7 @@ const scripts = () => {
     .pipe(sourcemaps.init())
     .pipe(concat("script.min.js"))
     .pipe(uglify())
+    .pipe(sourcemaps.write('../css'))
     .pipe(dest("app/js/dest"))
     .pipe(browserSync.stream());
 };
