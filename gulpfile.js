@@ -35,7 +35,7 @@ const styles = () => {
 };
 
 const scripts = () => {
-  return src("app/js/src/*.js")
+  return src("app/js/src/**/*.js")
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(concat("script.min.js"))

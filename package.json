@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "browser-sync": "^2.27.5",
+    "get-scrollbar-width": "^1.0.5",
     "pngquant-bin": "^6.0.0"
   }
 }
