@@ -1,11 +1,21 @@
 # Install Gulp-Pack
-`npm i`
+`
+npm i
+`
 # Run Watcher
-`gulp`
+`
+gulp
+`
 # Run build, compile files in 'dist'
-`gulp build`
+`
+gulp build
+`
 # Clean Dist 
-`gulp cleanBuild`
+`
+gulp cleanBuild
+`
 # Clean Images
-`gulp CleanImg`
+`
+gulp CleanImg
+`
 
