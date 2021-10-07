@@ -4,13 +4,13 @@
   outline: 0;
   box-sizing: border-box;
   overflow-anchor: none;
-  
+
   &::after, &::before {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
     outline: 0
   }
-  
+
   &:active, &:focus, &:hover, &:visited {
     outline: 0;
     -webkit-tap-highlight-color: transparent
@@ -57,12 +57,6 @@ embed, iframe, img, legend, object, pre, details, figure, video, audio, picture 
 a {
   background-color: transparent;
   text-decoration: unset;
-  color: unset;
-  
-  &:active, &:focus, &:hover, &:visited {
-    color: inherit;
-    text-decoration: unset;
-  }
 }
 
 b, strong {
@@ -135,7 +129,7 @@ ul {
 ol, ul {
   margin: 0;
   padding: 0;
-  
+
   li {
     ol, ul {
       margin: 0;
@@ -170,13 +164,13 @@ input, textarea {
   border-radius: 0;
   box-shadow: none;
   border: none;
-  
-  
+
+
   &::placeholder {
     font-size: inherit;
     color: inherit;
   }
-  
+
   &:focus, &:hover, &:active, &.focus-visible, &.focus-within {
     appearance: none;
     outline: none;
@@ -184,22 +178,22 @@ input, textarea {
     border-radius: 0;
     box-shadow: none;
     border: none;
-    
+
     &::placeholder {
       font-size: inherit;
       color: inherit;
     }
   }
-  
-  
+
+
   &::-webkit-search-cancel-button {
     display: none;
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
   }
-  
-  
+
+
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
