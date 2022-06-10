@@ -1,5 +1,5 @@
 import getScrollbarWidth from "get-scrollbar-width";
-
+import $ from 'jquery'
 
 // Set dynamic 100vh / 100 css variable
 function setVhCSSVariable() {
@@ -27,3 +27,15 @@ function setScrollbarWidthCSSVariable() {
 // Init Variables first time
 setVhCSSVariable()
 setScrollbarWidthCSSVariable();
+
+jQuery(document).ready(function ($) {
+    "use strict"
+
+
+});
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    "use strict";
+
+
+});
